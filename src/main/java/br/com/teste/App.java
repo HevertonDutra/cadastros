@@ -1,10 +1,11 @@
 package br.com.teste;
 
+
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class App extends Animal {
+public class App {
 
     private static final String LOGIN = "H";
     private static final Integer SENHA = 123;
@@ -22,9 +23,15 @@ public class App extends Animal {
             return;
         }
 
+        //menu
+
+
+        //metodo de cadastro de pessoas
         List<Pessoa> pessoas = new ArrayList<Pessoa>();
         while (JOptionPane.showConfirmDialog(null, "Deseja cadastrar uma pessoa?") == 0) {
+
             Pessoa pessoa = new Pessoa();
+
             pessoa.nome = JOptionPane.showInputDialog("Nome");
             pessoa.numTel = JOptionPane.showInputDialog("Telefone");
             pessoa.logradouro = JOptionPane.showInputDialog("Rua/AV");
@@ -35,28 +42,51 @@ public class App extends Animal {
         }
 
         for (Pessoa pessoa : pessoas) {
-            JOptionPane.showMessageDialog(null, " Nome: " + pessoa.nome + " \n Telefone: " + pessoa.numTel +
-                    " \n Rua: " + pessoa.logradouro + " \n Complemento: " + pessoa.complemento + " \n Bairro: " + pessoa.bairro + " \n Numero: " + pessoa.numCasa);
+            JOptionPane.showMessageDialog(null, " Nome: " + pessoa.nome + " \n Telefone: "
+                    + pessoa.numTel + " \n Rua: " + pessoa.logradouro + " \n Complemento: " + pessoa.complemento +
+                    " \n Bairro: " + pessoa.bairro + " \n Numero: " + pessoa.numCasa);
         }
 
+        //metodo cadastro de animal
         List<Animal> animais = new ArrayList<Animal>();
         while (JOptionPane.showConfirmDialog(null, "Cadastro de um novo Animal") == 0) {
+
             Animal animal = new Animal();
+
             animal.codBrinco = JOptionPane.showInputDialog("Código Brinco");
             animal.nome = JOptionPane.showInputDialog("Nome do Animal");
             animal.raca = JOptionPane.showInputDialog("Raça do Animal");
             animal.cor = JOptionPane.showInputDialog("Cor do Animal");
-            animal.add(animal);
+            animais.add(animal);
+        }
+
+        for (Animal animal : animais) {
+            JOptionPane.showMessageDialog(null, " Código: " + animal.codBrinco + " \n Nome: "
+                    + animal.nome + " \n Raça: " + animal.raca + " \n Cor: " + animal.cor);
+        }
+
+        //metodo cadastro de propriedades
+        List<Propriedade> propriedades = new ArrayList<Propriedade>();
+        while (JOptionPane.showConfirmDialog(null, "Cadastrar nova Proriedade") == 0) {
+
+
+            Propriedade propriedade = new Propriedade();
+
+            propriedade.codLocal = JOptionPane.showInputDialog("Código Local");
+            propriedade.nomeFunc = JOptionPane.showInputDialog("Nome Caseiro");
+            propriedade.nomePropriedade = JOptionPane.showInputDialog("Código Fazenda");
 
         }
 
-        for (Animal animal : animais){
-            
-        }
+        for (Propriedade propriedade : propriedades) {
+            JOptionPane.showConfirmDialog(null, "Código: " + propriedade.codLocal + "\n Nome Funcionário: " + propriedade.nomeFunc +
+                    "\n Nome Fazenda: " + propriedade.nomePropriedade);
 
 
         }
+
+        return;
     }
 
-
+}
 

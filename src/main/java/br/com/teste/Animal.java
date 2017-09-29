@@ -7,8 +7,4 @@ public class Animal {
     String cor;
     String codBrinco;
 
-
-    public void add(Animal animal) {
-        animal.add(animal);
-    }
 }
